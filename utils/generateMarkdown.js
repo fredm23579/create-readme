@@ -39,34 +39,50 @@ function generateMarkdown(data) {
 ${renderLicenseBadge(data.license)} 
 
 ## Description
-${data.description}
+📝${data.description}
+
+## Github Repository Link
+* GitHub: [${data.github}](https://github.com/${data.github})
 
 ## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+- [Repository Link](#repository-link)
+- [Live Application URL](#live-application-url)
+- [Screenshots](#screenshots)
 
 ## Installation
 
-${clone}bash
+🔧 ${clone}bash
 ${data.installation}
 ${clone}
 
 ## Usage
-${data.usage}
+💻 ${data.usage}
 
 ## Contributing
-${data.contributing}
+🤝 ${data.contributing}
 
 ## Tests
-${data.tests}
+🧪 ${data.tests}
 
 ## Questions
-Contact me:
-* GitHub: [${data.github}](https://github.com/${data.github})
-* Email: ${data.email}  
+📬 Contact me:
+- GitHub: [${data.github}](https://github.com/${data.github})
+- Email: ${data.email}
+
+## Repository Link
+🔗 [GitHub Repository](https://github.com/${data.github}/${data.repoName})
+
+## Live Application URL
+🌐 [Live Application](https://${data.github}.github.io/${data.repoName})
+
+## Screenshots
+📸 Insert your screenshots here:
+![Project Screenshot](screenshot-url)
 
 ${renderLicenseSection(data.license)} 
 `;

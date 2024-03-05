@@ -50,7 +50,7 @@ ${data.description}
 
 ## Installation
 
-${clone}
+${clone}bash
 ${data.installation}
 ${clone}
 

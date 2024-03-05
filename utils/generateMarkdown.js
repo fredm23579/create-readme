@@ -54,9 +54,9 @@ ${renderLicenseBadge(data.license)}
 - [Live Application URL](#live-application-url)
 - [Screenshots](#screenshots)
 
-## Installation
+## Installation🔧 
 
-🔧 ${clone}bash
+${clone}bash
 ${data.installation}
 ${clone}
 

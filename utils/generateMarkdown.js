@@ -1,5 +1,6 @@
 
 // TODO: Create a function that returns a license badge based on which license is passed in
+let clone = "```";
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const badges = {
@@ -48,7 +49,10 @@ ${data.description}
 * [Questions](#questions)
 
 ## Installation
+
+${clone}
 ${data.installation}
+${clone}
 
 ## Usage
 ${data.usage}

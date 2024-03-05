@@ -1,9 +1,8 @@
-
-# project
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
+# Create Readme
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 ## Description
-this is my project
+This project crestes a README.md file using nodejs and the inquirer library (installed using npn). It can be used with any project and uses a seies of cammand lind questions to fill in the content of your README.md"
 
 ## Table of Contents
 * [Installation](#installation)
@@ -13,26 +12,26 @@ this is my project
 * [Questions](#questions)
 
 ## Installation
-git clone 
+
+```bash
+git clone git@github.com:fredm23579/create-readme.git
+```
 
 ## Usage
-use to create a professional README
+Run on the command line interactively using nodejs with command node index.js and answer the command line prompts in the bash shell environment.
 
 ## Contributing
-to contribute just create a new fork and contact the team
+You can contribute by forking the project and cloning it to improve the features then contact the creator of the repo in order to approve updates.
 
 ## Tests
-use nodejs ro run tests 
+Run tests on this code using the command line with the node command experimenting with various inputs to the prompts.
 
 ## Questions
 Contact me:
-* GitHub: [username@github.com](https://github.com/username@github.com)
-* Email: me@github.com  
+* GitHub: [fredm23579](https://github.com/fredm23579)
+* Email: motta@g.ucla.edu  
 
 
 ## License  
-This project is covered under the GPL 3.0 license. To learn more, see the accompanying LICENSE file or visit []().
+This project is covered under the MIT license. To learn more, see the accompanying LICENSE file or visit [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
    
-=======
-# create-readme
-

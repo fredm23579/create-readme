@@ -1,74 +1,96 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js'); 
-// TODO: Create an array of questions for user input
+const generateMarkdown = require('./utils/generateMarkdown');
+
+// Array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'title',
+        name: 'projectTitle',
         message: 'What is the title of your project?',
-        validate: (input) => input !== '' ? true : 'Project title is required!' 
+        validate: input => input ? true : 'Project title is required.'
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Enter a brief description of your project:',
+        message: 'Provide a description of your project:',
+        validate: input => input ? true : 'Description is required.'
     },
     {
         type: 'input',
-        name: 'installation',
+        name: 'installationInstructions',
         message: 'Provide installation instructions:',
+        validate: input => input ? true : 'Installation instructions are required.'
     },
     {
         type: 'input',
-        name: 'usage',
+        name: 'usageInstructions',
         message: 'Describe how to use your project:',
+        validate: input => input ? true : 'Usage instructions are required.'
+    },
+    {
+        type: 'input',
+        name: 'contributionInstructions',
+        message: 'Provide guidelines for contributing to your project:',
+    },
+    {
+        type: 'input',
+        name: 'testInstructions',
+        message: 'Provide instructions on running tests:',
     },
     {
         type: 'list',
-        name: 'license',
+        name: 'licenseChoice',
         message: 'Choose a license for your project:',
         choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'None'],
     },
     {
         type: 'input',
-        name: 'contributing',
-        message: 'Provide guidelines for contributing to your project:',
-    },
-    {
-        type: 'input',
-        name: 'tests',
-        message: 'Provide instructions on running tests for your project:',
-    },
-    {
-        type: 'input',
         name: 'github',
         message: 'Enter your GitHub username:',
+        validate: input => input ? true : 'GitHub username is required.'
     },
     {
         type: 'input',
-        name: 'email',
+        name: 'questionsEmail',
         message: 'Enter your email address:',
+        validate: input => input ? true : 'Email address is required.'
+    },
+    {
+        type: 'input',
+        name: 'liveSiteLink',
+        message: 'Enter the link to the live site (if available):',
+    },
+    {
+        type: 'input',
+        name: 'siteDemoLink',
+        message: 'Enter the link to a demo or walkthrough (if available):',
     },
 ];
-// TODO: Create a function to write README file
 
+// Function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => 
-        err ? console.error(err) : console.log('README.md successfully generated!')
-    );
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+            return;
+        }
+        console.log('README.md successfully generated!');
+    });
 }
-// TODO: Create a function to initialize app
+
+// Function to initialize app
 function init() {
+    console.log("Welcome to the ReadMe Generator!");
     inquirer.prompt(questions)
         .then((answers) => {
-            const readmeContent = generateMarkdown(answers); 
-            writeToFile('README.md', readmeContent); 
+            const markdownContent = generateMarkdown(answers);
+            writeToFile('README.md', markdownContent);
         })
         .catch((error) => {
-            console.log(error);
+            console.error('Error during application initialization:', error);
         });
 }
-// Function call to initialize app
+
+// Initialize the application
 init();

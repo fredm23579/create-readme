@@ -1,48 +1,76 @@
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-let clone = "```";
-// If there is no license, return an empty string
+// Function to return a license badge based on which license is passed in
 function renderLicenseBadge(license) {
   const badges = {
-    MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    'Apache 2.0': '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-    'GPL 3.0': '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    None: '' 
+      MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+      'Apache 2.0': '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+      'GPL 3.0': '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+      None: ''
   };
-  return badges[license] || ''; 
+  return badges[license] || '';
 }
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+
+// Function to return the license link
 function renderLicenseLink(license) {
-  // Similar structure to renderLicenseBadge, but returning the full license link
-  // Example:
   const links = {
       MIT: 'https://opensource.org/licenses/MIT',
       'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
-      // ... add more links
+      'GPL 3.0': 'https://www.gnu.org/licenses/gpl-3.0'
+      // Add more links as needed
   };
-  return links[license] || ''; 
+  return links[license] || '';
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Function to return the license section of README
 function renderLicenseSection(license) {
-  if (!license) return ''; 
+  if (!license || license === 'None') return '';
   return `
-## License  
+## License
 This project is covered under the ${license} license. To learn more, see the accompanying LICENSE file or visit [${renderLicenseLink(license)}](${renderLicenseLink(license)}).
   `;
 }
-// TODO: Create a function to generate markdown for README
+
+// Function to render the live site link section
+function renderLinkSection(liveSiteLink) {
+  if (!liveSiteLink) return '';
+  return `
+## Live Site
+[Click here to view the live site!](${liveSiteLink})
+  `;
+}
+
+// Function to render the demo section
+function renderDemo(demoLink) {
+  if (!demoLink) return '';
+  return `
+## Demo
+![Demo](${demoLink})
+  `;
+}
+
+// Function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-${renderLicenseBadge(data.license)} 
+  const {
+      projectTitle,
+      description,
+      installationInstructions,
+      usageInstructions,
+      contributionInstructions,
+      testInstructions,
+      github,
+      questionsEmail,
+      licenseChoice,
+      liveSiteLink,
+      siteDemoLink
+  } = data;
+
+  return `
+# ${projectTitle}
+
+${renderLicenseBadge(licenseChoice)}
 
 ## Description
-📝${data.description}
-
-## Github Repository Link
-* GitHub: [${data.github}](https://github.com/${data.github})
+${description}
 
 ## Table of Contents
 - [Installation](#installation)
@@ -50,43 +78,29 @@ ${renderLicenseBadge(data.license)}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
-- [Repository Link](#repository-link)
-- [Live Application URL](#live-application-url)
-- [Screenshots](#screenshots)
+- [License](#license)
 
-## Installation🔧 
+${renderLicenseSection(licenseChoice)}
+${renderLinkSection(liveSiteLink)}
+${renderDemo(siteDemoLink)}
 
-${clone}bash
-${data.installation}
-${clone}
+## Installation
+${installationInstructions}
 
 ## Usage
-💻 ${data.usage}
+${usageInstructions}
 
 ## Contributing
-🤝 ${data.contributing}
+${contributionInstructions}
 
 ## Tests
-🧪 ${data.tests}
+${testInstructions}
 
 ## Questions
-📬 Contact me:
-- GitHub: [${data.github}](https://github.com/${data.github})
-- Email: ${data.email}
-
-## Repository Link
-🔗 [GitHub Repository](https://github.com/${data.github}/${data.repoName})
-
-## Live Application URL
-🌐 [Live Application](https://${data.github}.github.io/${data.repoName})
-
-## Screenshots
-📸 Insert your screenshots here:
-![Project Screenshot](screenshot-url)
-
-${renderLicenseSection(data.license)} 
-`;
-};
-
+Contact me:
+* GitHub: [${github}](https://github.com/${github})
+* Email: ${questionsEmail}
+  `;
+}
 
 module.exports = generateMarkdown;

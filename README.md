@@ -18,7 +18,7 @@ This project uses javascript and nodejs to create a propfessional README.md file
 [Click here to view the Repo!](https://github.com/fredm23579/create-readme)
   
 ## Demo
-![Demo](video/create-readme.mp4)
+![Demo](img/create-readme.gif)
   
 ## Installation
 Download using git clone command.

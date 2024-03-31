@@ -1,10 +1,10 @@
 
-# My Project
+# Create Readme
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This is my project.
+This project uses javascript and nodejs to create a propfessional README.md file using the command line.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,27 +14,29 @@ This is my project.
 - [Questions](#questions)
 - [License](#license)
 
-
-## License
-This project is covered under the MIT license. To learn more, see the accompanying LICENSE file or visit [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
+## Live Site
+[Click here to view the Repo!](https://github.com/fredm23579/create-readme)
   
-
-
-
+## Demo
+![Demo](video/create-readme.mp4)
+  
 ## Installation
-git clone localhost:3001
+Download using git clone command.
 
 ## Usage
-it is used to generate a redme file
+Run using `node index.js` from the command line.
 
 ## Contributing
-contact project administrator
+Contact the primary developer for contributions.
 
 ## Tests
-run tests using nodejs
+Run tests using nodejs.
 
 ## Questions
 Contact me:
-* GitHub: [test123c](https://github.com/test123c)
-* Email: test@test.com
+* GitHub: [fredm23579](https://github.com/fredm23579)
+* Email: motta@g.ucla.edu
+  
+## License
+This project is covered under the MIT license. To learn more, see the accompanying LICENSE file or visit [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
   

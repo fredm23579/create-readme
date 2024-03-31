@@ -1,5 +1,5 @@
 {
-  "name": "readme-generator",
+  "name": "create-readme",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "dependencies": {
     "inquirer": "^8.2.4"
   },
-  "keywords": [],
-  "description": ""
+  "keywords": ["README.md"],
+  "description": "Creates a Readme based on user input to command line prompts"
 }
